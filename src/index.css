@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-temple-peach: #F9ECE5;
+  --color-temple-sand: #F4DFD2;
+  --color-temple-terracotta: #C87D65;
+  --color-temple-terracottaDark: #9A5038;
+  --color-temple-gold: #D4AF37;
+  --color-temple-goldLight: #F5E7A3;
+  --color-temple-goldDark: #A67C1E;
+  --color-temple-sage: #8FA89B;
+  --color-temple-sageLight: #D9E5DE;
+  --color-temple-sageDark: #4A6B5C;
+  --color-temple-lake: #7FA8A6;
+  --color-temple-lakeLight: #D0E5E4;
+  --color-temple-cream: #FAF7F2;
+  --color-temple-maroon: #7B241C;
+  --color-temple-bronze: #634735;
+
+  --font-cinzel: 'Cinzel', serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAF7F2;
+  color: #4A3528;
+  overflow-x: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F9ECE5;
+}
+::-webkit-scrollbar-thumb {
+  background: #C87D65;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9A5038;
+}
+
+/* Blessings Feed Custom Scrollbar */
+.blessings-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #C87D65 #F9ECE5;
+}
+.blessings-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.blessings-scrollbar::-webkit-scrollbar-track {
+  background: #F9ECE5;
+  border-radius: 9999px;
+  margin: 6px 0;
+  border: 1px solid rgba(200, 125, 101, 0.25);
+}
+.blessings-scrollbar::-webkit-scrollbar-thumb {
+  background: #C87D65;
+  border-radius: 9999px;
+  border: 1.5px solid #FAF7F2;
+}
+.blessings-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9A5038;
+}
+
+/* Infinite Marquee Scroll Animation */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+/* Vertical Infinite Auto-Scroll for Wall of Blessings */
+@keyframes verticalMarquee {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-50%); }
+}
+
+.animate-marquee-vertical {
+  animation: verticalMarquee 26s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-vertical:hover {
+  animation-play-state: paused;
+}
+
+/* Gentle Hanging Sway Keyframes */
+@keyframes swayOne {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes swayTwo {
+  0%, 100% { transform: rotate(3deg); }
+  50% { transform: rotate(-2deg); }
+}
+
+.sway-card-1 {
+  transform-origin: top center;
+  animation: swayOne 4s ease-in-out infinite;
+}
+
+.sway-card-2 {
+  transform-origin: top center;
+  animation: swayTwo 4.5s ease-in-out infinite;
+}
